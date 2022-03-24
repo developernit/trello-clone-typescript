@@ -1,5 +1,5 @@
 {
-  "name": "trello-clone",
+  "name": "trello-clone-ts",
   "version": "0.1.0",
   "private": true,
   "homepage": "https://developernit.github.io/trello-clone-typescript/",
@@ -47,5 +47,7 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "keywords": [],
+  "description": ""
 }
