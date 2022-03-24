@@ -3,18 +3,16 @@ import { AppContainer } from "./styles";
 import { Card } from "./Card";
 import { Column } from "./Column";
 import { AddNewItem } from "./AddNewItem";
+import { useAppState } from "./AppStateContext";
+
 function App() {
+  //getting the data from AppStateContext
+  const { state } = useAppState();
   return (
     <AppContainer>
-      <Column text="To Do">
-        <Card text="Generate application" />
-      </Column>
-      <Column text="In Progress">
-        <Card text="Learn TypeScript" />
-      </Column>
-      <Column text="Completed">
-        <Card text="Begin to use static typing" />
-      </Column>
+      {state.lists.map((list, i) => {
+        <Column text={list.text} key={list.id} index={i} />;
+      })}
       <AddNewItem toggleButtonText="+ Add another list" onAdd={console.log} />
     </AppContainer>
   );
